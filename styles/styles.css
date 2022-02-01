@@ -1,0 +1,17 @@
+body {
+    background-color: var(--secondary);
+}
+
+main {
+    padding: 40px;
+    color: var(--strong-accent);
+    font-weight: 700;
+    font-size: 56px;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    gap: 34px;
+    flex-wrap: wrap;
+}
