@@ -1,3 +1,5 @@
 let currentPlaying = false
 let roundCount = 0
-let flipped = 0
+let flipped = null
+let points = 0
+let cardCount = 0
