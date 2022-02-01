@@ -23,3 +23,7 @@ section {
     border-radius: 5px;
     background-color: var(--weak-accent);
 }
+
+.flipped {
+    background-color: tomato;
+}
