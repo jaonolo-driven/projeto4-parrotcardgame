@@ -1,0 +1,15 @@
+*:root {
+    box-sizing: border-box;
+
+    --strong-accent: #75B79E;
+    --weak-accent: #A7E9AF;
+    --secondary: #EEF9BF;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
