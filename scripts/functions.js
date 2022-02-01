@@ -28,10 +28,7 @@ const unflipCards = (cards) => {
 }
 
 const addPoint = () => {
-    points++
-    let aopa = (points === cardCount)
-    console.log(points, aopa, cardCount, typeof points, typeof cardCount)
-    if(aopa)
+    if(++points === cardCount)
         gameFinish()
 }
 
@@ -42,17 +39,29 @@ const gameInitialize = () => {
 
     const gameContainer = document.querySelector('section')
     cardCount = parseInt(prompt('Numero'))
+
+    let array = ['bobross', 'explody', 'fiesta', 'metal', 'revertit', 'triplets', 'unicorn']
+    array = array.slice(0, cardCount)
+    array = array.concat(array)
+    array = array.sort(() => {return Math.random() - 0.5})
     
-    for(let i = 0; i < cardCount; i++){
-        let card =  document.createElement('button')
+    for(let i = 0; i < cardCount*2; i++){
+        let card = document.createElement('button')
         card.classList.add('card')
-        card.setAttribute('value', 'teste')
+
+        let back = document.createElement('img')
+        back.classList.add('back')
+
+        let front = document.createElement('img')
+        front.setAttribute('src', 'public/front.png')
+
+        back.setAttribute('src',`public/${array[i]}parrot.gif`)
+
+        card.setAttribute('value', array[i])
         card.addEventListener('click', (e) => flipCard(e.currentTarget))
-        gameContainer.appendChild(card)
-        card =  document.createElement('button')
-        card.classList.add('card')
-        card.setAttribute('value', 'abobora')
-        card.addEventListener('click', (e) => flipCard(e.currentTarget))
+
+        card.appendChild(front)
+        card.appendChild(back)
         gameContainer.appendChild(card)
     }
     

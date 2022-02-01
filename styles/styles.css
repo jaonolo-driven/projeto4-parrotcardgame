@@ -12,9 +12,11 @@ main {
 
 section {
     display: flex;
+    justify-content: center;
     gap: 34px;
     flex-wrap: wrap;
     margin-top: 47px;
+    padding: 0 69px
 }
 
 .card {
@@ -24,6 +26,23 @@ section {
     background-color: var(--weak-accent);
 }
 
+.card img{
+    height: 100px;
+    width: 100px
+}
+
 .flipped {
     background-color: tomato;
+}
+
+.back {
+    display: none;
+}
+
+.flipped .back {
+    display: block    
+}
+
+.flipped img {
+    display: none
 }
