@@ -12,7 +12,7 @@ const flipCard = (card) => {
         if(flipped.value === card.value)
             addPoint()
         else
-            unflipCards([flipped, card])
+            setTimeout((a) => unflipCards(a), 1000, [flipped, card])
         flipped = null
     }
     else
