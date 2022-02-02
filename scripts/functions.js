@@ -4,7 +4,7 @@ const flipCard = (card) => {
     card.classList.add('flipped')
 
     roundCount++
-    document.querySelector('p').innerText = roundCount
+    document.querySelector('#counter').innerText = roundCount
     
     console.log(flipped)
     if(flipped)
@@ -18,7 +18,6 @@ const flipCard = (card) => {
     else
     {
         flipped = card
-        console.log('flipped mudou para: ' + flipped)
     }
 }
 
@@ -38,7 +37,9 @@ const gameInitialize = () => {
     currentPlaying = true
 
     const gameContainer = document.querySelector('section')
-    cardCount = parseInt(prompt('Numero'))
+    do {
+        cardCount = parseInt(prompt('Numero'))
+    } while (testInput(cardCount))
 
     let array = ['bobross', 'explody', 'fiesta', 'metal', 'revertit', 'triplets', 'unicorn']
     array = array.slice(0, cardCount)
@@ -48,17 +49,15 @@ const gameInitialize = () => {
     for(let i = 0; i < cardCount*2; i++){
         let card = document.createElement('button')
         card.classList.add('card')
+        card.setAttribute('value', array[i])
+        card.addEventListener('click', (e) => flipCard(e.currentTarget))
 
         let back = document.createElement('img')
         back.classList.add('back')
+        back.setAttribute('src',`public/${array[i]}parrot.gif`)
 
         let front = document.createElement('img')
         front.setAttribute('src', 'public/front.png')
-
-        back.setAttribute('src',`public/${array[i]}parrot.gif`)
-
-        card.setAttribute('value', array[i])
-        card.addEventListener('click', (e) => flipCard(e.currentTarget))
 
         card.appendChild(front)
         card.appendChild(back)
@@ -66,7 +65,7 @@ const gameInitialize = () => {
     }
     
     roundCount = 0
-    document.querySelector('p').innerText = roundCount
+    document.querySelector('#counter').innerText = roundCount
 
     points = 0
 }
@@ -74,4 +73,9 @@ const gameInitialize = () => {
 const gameFinish = () => {
     currentPlaying = false
     alert("é nois")
+}
+
+const testInput = (number) => {
+    // return !(number % 2 !== 0 && number >= 4 && number <= 14)
+    return !(number >= 2 && number <=7) 
 }
