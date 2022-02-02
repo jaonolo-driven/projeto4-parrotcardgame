@@ -46,3 +46,9 @@ section {
 .flipped img {
     display: none
 }
+
+@media (max-width: 614px) {
+    h1 {
+        font-size: 36px
+    }
+}
