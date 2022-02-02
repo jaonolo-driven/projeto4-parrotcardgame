@@ -24,15 +24,14 @@ section {
     width: 117px;
     border-radius: 5px;
     background-color: var(--weak-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card img{
     height: 100px;
     width: 100px
-}
-
-.flipped {
-    background-color: tomato;
 }
 
 .back {
@@ -45,6 +44,16 @@ section {
 
 .flipped img {
     display: none
+}
+
+main div {
+    margin: 20px auto;
+    font-size: 26px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    color: red;
+    max-width: 1000px;
 }
 
 @media (max-width: 614px) {
