@@ -6,7 +6,6 @@ const flipCard = (card) => {
     roundCount++
     document.querySelector('#counter').innerText = roundCount
     
-    console.log(flipped)
     if(flipped)
     {
         if(flipped.value === card.value)
@@ -27,7 +26,7 @@ const unflipCards = (cards) => {
 }
 
 const addPoint = () => {
-    if(++points === cardCount)
+    if(++points === (cardCount/2))
         gameFinish()
 }
 
@@ -37,16 +36,17 @@ const gameInitialize = () => {
     currentPlaying = true
 
     const gameContainer = document.querySelector('section')
+
     do {
         cardCount = parseInt(prompt('Numero'))
-    } while (testInput(cardCount))
+    } while (validateCardCount(cardCount))
 
     let array = ['bobross', 'explody', 'fiesta', 'metal', 'revertit', 'triplets', 'unicorn']
-    array = array.slice(0, cardCount)
+    array = array.slice(0, cardCount/2)
     array = array.concat(array)
     array = array.sort(() => {return Math.random() - 0.5})
     
-    for(let i = 0; i < cardCount*2; i++){
+    for(let i = 0; i < cardCount; i++){
         let card = document.createElement('button')
         card.classList.add('card')
         card.setAttribute('value', array[i])
@@ -75,7 +75,10 @@ const gameFinish = () => {
     alert("é nois")
 }
 
-const testInput = (number) => {
-    // return !(number % 2 !== 0 && number >= 4 && number <= 14)
-    return !(number >= 2 && number <=7) 
+const validateCardCount = (number) => {
+
+    const isEven = (number % 2 === 0)
+    const isValid = (number >= 4 && number <= 14)
+
+    return !(isEven && isValid)
 }
