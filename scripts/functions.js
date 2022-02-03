@@ -66,12 +66,14 @@ const gameInitialize = () => {
     
     roundCount = 0
     document.querySelector('#counter').innerText = roundCount
+    clock()
 
     points = 0
 }
 
 const gameFinish = () => {
     currentPlaying = false
+    clock()
     alert("é nois")
 }
 
@@ -81,4 +83,12 @@ const validateCardCount = (number) => {
     const isValid = (number >= 4 && number <= 14)
 
     return !(isEven && isValid)
+}
+
+const clock = () => {
+    if (now !== null){
+        document.querySelector('#clock').innerText = `${(Date.now() - now)/1000} segundos`
+        now = null
+    } else
+        now = Date.now()
 }
