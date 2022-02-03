@@ -52,12 +52,19 @@ const gameInitialize = () => {
         card.setAttribute('value', array[i])
         card.addEventListener('click', (e) => flipCard(e.currentTarget))
 
-        let back = document.createElement('img')
+        let back = document.createElement('div')
         back.classList.add('back')
-        back.setAttribute('src',`public/${array[i]}parrot.gif`)
 
-        let front = document.createElement('img')
-        front.setAttribute('src', 'public/front.png')
+        let backImg = document.createElement('img')
+        backImg.setAttribute('src',`public/${array[i]}parrot.gif`)
+        back.appendChild(backImg)
+
+        let front = document.createElement('div')
+        front.classList.add('front')
+
+        let frontImg = document.createElement('img')
+        frontImg.setAttribute('src', 'public/front.png')
+        front.appendChild(frontImg)
 
         card.appendChild(front)
         card.appendChild(back)

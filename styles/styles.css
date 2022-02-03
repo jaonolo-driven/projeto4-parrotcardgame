@@ -22,11 +22,25 @@ section {
 .card {
     height: 146px;
     width: 117px;
+    position: relative;
+    padding: 0;
+    display: block;
+    border: none;
+    background-color: transparent;
+}
+
+.card div {
+    height: 146px;
+    width: 117px;
     border-radius: 5px;
     background-color: var(--weak-accent);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    top: 0;
+    transition: all .5s;
 }
 
 .card img{
@@ -35,18 +49,18 @@ section {
 }
 
 .back {
-    display: none;
+    transform: rotateY(180deg)
 }
 
 .flipped .back {
-    display: block    
+    transform: rotateY(0deg)  
 }
 
-.flipped img {
-    display: none
+.flipped .front {
+    transform: rotateY(-180deg)
 }
 
-main div {
+main > div {
     margin: 20px auto;
     font-size: 26px;
     display: flex;
