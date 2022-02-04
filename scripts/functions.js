@@ -36,6 +36,7 @@ const gameInitialize = () => {
     currentPlaying = true
 
     const gameContainer = document.querySelector('section')
+    gameContainer.innerHTML = null
 
     do {
         cardCount = parseInt(prompt('Numero'))
@@ -73,14 +74,14 @@ const gameInitialize = () => {
     
     roundCount = 0
     document.querySelector('#counter').innerText = roundCount
-    clock()
+    clock(0)
 
     points = 0
 }
 
 const gameFinish = () => {
     currentPlaying = false
-    clock()
+    // clock()
     alert("é nois")
 }
 
@@ -92,10 +93,24 @@ const validateCardCount = (number) => {
     return !(isEven && isValid)
 }
 
-const clock = () => {
-    if (now !== null){
-        document.querySelector('#clock').innerText = `${(Date.now() - now)/1000} segundos`
-        now = null
-    } else
-        now = Date.now()
+// const clock = () => {
+//     if (now !== null){
+//         document.querySelector('#clock').innerText = `${(Date.now() - now)/1000} segundos`
+//         now = null
+//     } else
+//         now = Date.now()
+// }
+
+
+// Implementado com ajuda do @bettoalsur
+const clock = (a) => {
+    if (currentPlaying){
+        let minutes = a/60 >= 1 ? `${parseInt(a/60)}min` : '' 
+        let seconds = `${a%60}s`
+
+        document.querySelector('#clock').innerText = minutes + ' ' + seconds
+        setTimeout((a) => {
+            clock(a)
+        }, 1000, a + 1)
+    }
 }
