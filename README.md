@@ -14,7 +14,7 @@ Segundo projeto envolvendo Javascript que fiz para a formação como desenvolved
 
 Os resultados foram bem satisfatórios, consegui concluir tudo que fora pedido incluindo os requisitos extras. A parte básica do html/css/js está bem mais treinada, e por isso este projeto demorou bem menos que os anteriores
 
-![Imagem do resultado final](https://imgur.com/D9GlFvn)
+![Imagem do resultado final](https://i.imgur.com/D9GlFvn.png)
 
 Para mostrar o resultado, a aplicação foi colocada no ar no [Github Pages](https://jaonolo.github.io/projeto3-driveneats)! Espero que se divirta no jogo!
   
