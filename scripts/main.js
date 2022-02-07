@@ -35,5 +35,6 @@ let cardCount = 0
 let flipped = null
 let points = 0
 let timeSpent = 0
+let currentClock = null
 
 gameInitialize()

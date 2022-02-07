@@ -80,13 +80,14 @@ const gameInitialize = () => {
     roundCount = 0
     document.querySelector('#counter').innerText = roundCount
     
-    clock()
+    currentClock = clock()
     points = 0
 }
 
 const gameFinish = () => {
     currentPlaying = false
-    alert(`Você ganhou em ${roundCount} jogadas e em ${timeSpent} segundos!`)
+    clearInterval(currentClock)
+    alert(`Você ganhou em ${roundCount} jogadas e em ${timeSpent - 1} segundos!`)
     if (prompt('Quer jogar novamente? (sim ou não)') === 'sim') {
         gameInitialize()
     }
@@ -99,13 +100,12 @@ const validateCardCount = (number) => {
     return !(isEven && isValid)
 }
 
-// Implementado com ajuda do @bettoalsur
+// menções honrosas: @bettoalsur e 
 const clock = () => {
-    if (currentPlaying){
+    document.querySelector('#clock').innerText = timeSpent + 's'
+    timeSpent++
+    return setInterval(() => {
         document.querySelector('#clock').innerText = timeSpent + 's'
-        setTimeout(() => {
-            timeSpent++
-            clock()
-        }, 1000)
-    }
+        timeSpent++
+    }, 1000)
 }
