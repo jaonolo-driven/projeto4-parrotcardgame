@@ -81,8 +81,10 @@ const gameInitialize = () => {
 
 const gameFinish = () => {
     currentPlaying = false
-    // clock()
     alert("é nois")
+    if (prompt('Que dnv?') === 'sim') {
+        gameInitialize()
+    }
 }
 
 const validateCardCount = (number) => {
@@ -92,15 +94,6 @@ const validateCardCount = (number) => {
 
     return !(isEven && isValid)
 }
-
-// const clock = () => {
-//     if (now !== null){
-//         document.querySelector('#clock').innerText = `${(Date.now() - now)/1000} segundos`
-//         now = null
-//     } else
-//         now = Date.now()
-// }
-
 
 // Implementado com ajuda do @bettoalsur
 const clock = (a) => {
