@@ -16,7 +16,7 @@ Os resultados foram bem satisfatórios, consegui concluir tudo que fora pedido i
 
 ![Imagem do resultado final](https://i.imgur.com/D9GlFvn.png)
 
-Para mostrar o resultado, a aplicação foi colocada no ar no [Github Pages](https://jaonolo.github.io/projeto3-driveneats)! Espero que se divirta no jogo!
+Para mostrar o resultado, a aplicação foi colocada no ar no [Github Pages](https://jaonolo.github.io/projeto4-parrotcardgame)! Espero que se divirta no jogo!
   
 ## **Observações**:
 
