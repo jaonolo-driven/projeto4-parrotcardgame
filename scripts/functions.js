@@ -38,8 +38,10 @@ const gameInitialize = () => {
     const gameContainer = document.querySelector('section')
     gameContainer.innerHTML = null
 
+    timeSpent = 0
+
     do {
-        cardCount = parseInt(prompt('Numero'))
+        cardCount = parseInt(prompt('Quantas cartas você deseja? (números pares de 4 à 14)'))
     } while (validateCardCount(cardCount))
 
     let array = ['bobross', 'explody', 'fiesta', 'metal', 'revertit', 'triplets', 'unicorn']
@@ -81,8 +83,8 @@ const gameInitialize = () => {
 
 const gameFinish = () => {
     currentPlaying = false
-    alert("é nois")
-    if (prompt('Que dnv?') === 'sim') {
+    alert(`Você ganhou em ${roundCount} jogadas e em ${timeSpent} segundos!`)
+    if (prompt('Quer jogar novamente? (sim ou não)') === 'sim') {
         gameInitialize()
     }
 }
@@ -96,14 +98,15 @@ const validateCardCount = (number) => {
 }
 
 // Implementado com ajuda do @bettoalsur
-const clock = (a) => {
+const clock = () => {
     if (currentPlaying){
-        let minutes = a/60 >= 1 ? `${parseInt(a/60)}min` : '' 
-        let seconds = `${a%60}s`
+        let minutes = timeSpent/60 >= 1 ? `${parseInt(timeSpent/60)}min` : '' 
+        let seconds = `${timeSpent%60}s`
 
         document.querySelector('#clock').innerText = minutes + ' ' + seconds
-        setTimeout((a) => {
-            clock(a)
-        }, 1000, a + 1)
+        setTimeout(() => {
+            timeSpent++
+            clock()
+        }, 1000)
     }
 }
