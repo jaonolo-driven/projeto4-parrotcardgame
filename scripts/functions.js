@@ -53,10 +53,12 @@ const gameInitialize = () => {
         let card = document.createElement('button')
         card.classList.add('card')
         card.setAttribute('value', array[i].value)
+        card.setAttribute("data-identifier", "card")
         card.addEventListener('click', (e) => flipCard(e.currentTarget))
 
         let back = document.createElement('div')
         back.classList.add('back')
+        back.setAttribute("data-identifier", "back-face")
 
         let backImg = document.createElement('img')
         backImg.setAttribute('src', array[i].src)
@@ -64,6 +66,7 @@ const gameInitialize = () => {
 
         let front = document.createElement('div')
         front.classList.add('front')
+        front.setAttribute("data-identifier", "front-face")
 
         let frontImg = document.createElement('img')
         frontImg.setAttribute('src', 'public/front.png')
@@ -99,10 +102,7 @@ const validateCardCount = (number) => {
 // Implementado com ajuda do @bettoalsur
 const clock = () => {
     if (currentPlaying){
-        let minutes = timeSpent/60 >= 1 ? `${parseInt(timeSpent/60)}min` : '' 
-        let seconds = `${timeSpent%60}s`
-
-        document.querySelector('#clock').innerText = minutes + ' ' + seconds
+        document.querySelector('#clock').innerText = timeSpent + 's'
         setTimeout(() => {
             timeSpent++
             clock()
