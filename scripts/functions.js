@@ -41,25 +41,25 @@ const gameInitialize = () => {
     timeSpent = 0
 
     do {
-        cardCount = parseInt(prompt('Quantas cartas você deseja? (números pares de 4 à 14)'))
+        cardCount = parseInt(prompt(`Quantas cartas você deseja? (números pares de 4 à ${2*cardOptions.length})`))
     } while (validateCardCount(cardCount))
 
-    let array = ['bobross', 'explody', 'fiesta', 'metal', 'revertit', 'triplets', 'unicorn']
-    array = array.slice(0, cardCount/2)
+    let array = []
+    array = cardOptions.slice(0, cardCount/2)
     array = array.concat(array)
     array = array.sort(() => {return Math.random() - 0.5})
     
     for(let i = 0; i < cardCount; i++){
         let card = document.createElement('button')
         card.classList.add('card')
-        card.setAttribute('value', array[i])
+        card.setAttribute('value', array[i].value)
         card.addEventListener('click', (e) => flipCard(e.currentTarget))
 
         let back = document.createElement('div')
         back.classList.add('back')
 
         let backImg = document.createElement('img')
-        backImg.setAttribute('src',`public/${array[i]}parrot.gif`)
+        backImg.setAttribute('src', array[i].src)
         back.appendChild(backImg)
 
         let front = document.createElement('div')
@@ -76,8 +76,8 @@ const gameInitialize = () => {
     
     roundCount = 0
     document.querySelector('#counter').innerText = roundCount
-    clock(0)
-
+    
+    clock()
     points = 0
 }
 
@@ -90,9 +90,8 @@ const gameFinish = () => {
 }
 
 const validateCardCount = (number) => {
-
     const isEven = (number % 2 === 0)
-    const isValid = (number >= 4 && number <= 14)
+    const isValid = (number >= 4 && number <= 2*cardOptions.length)
 
     return !(isEven && isValid)
 }
