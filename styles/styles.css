@@ -38,7 +38,12 @@ section {
     justify-content: center;
     align-items: center;
     position: absolute;
+
     backface-visibility: hidden;
+
+    /* IOS Compatibility */
+    -webkit-backface-visibility: hidden;
+
     top: 0;
     transition: all .5s;
 }

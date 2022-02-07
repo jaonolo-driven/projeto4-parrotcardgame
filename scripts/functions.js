@@ -100,7 +100,7 @@ const validateCardCount = (number) => {
     return !(isEven && isValid)
 }
 
-// menções honrosas: @bettoalsur e 
+// menções honrosas: @bettoalsur e @Mayt1
 const clock = () => {
     document.querySelector('#clock').innerText = timeSpent + 's'
     timeSpent++
