@@ -1,6 +1,6 @@
 # Projeto 4: Parrot Card Game
 
-Segundo projeto envolvendo Javascript que fiz para a formação como desenvolvedor full-stack na Driven. O objetivo era implementar um jogo da memória com temática de papagaios, seguindo layout e requisitos apresentados
+Segundo projeto envolvendo Javascript que fiz para a formação como desenvolvedor full-stack na Driven. O objetivo era implementar um jogo da memória com temática de papagaios, seguindo layout e requisitos apresentados.
 
 ## **Conteúdos exercitados**:
 
