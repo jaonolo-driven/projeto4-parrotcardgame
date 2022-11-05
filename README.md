@@ -12,7 +12,7 @@ Segundo projeto envolvendo Javascript que fiz para a formação como desenvolved
 
 ## **Resultados**:
 
-Os resultados foram bem satisfatórios, consegui concluir tudo que fora pedido incluindo os requisitos extras. A parte básica do html/css/js está bem mais treinada, e por isso este projeto demorou bem menos que os anteriores
+Os resultados foram bem satisfatórios, consegui concluir tudo que fora pedido incluindo os requisitos extras. A parte básica do html/css/js está bem mais treinada, e por isso este projeto demorou bem menos que os anteriores.
 
 ![Imagem do resultado final](https://i.imgur.com/D9GlFvn.png)
 
